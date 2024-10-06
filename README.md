@@ -28,7 +28,7 @@ const baseURL = `https://wd1-todos-api.diurivj.workers.dev/api/${user}/todos`
 const baseURL = `https://wd1-todos-api.diurivj.workers.dev/api/diego/todos`
 ```
 
-### GET /todos
+### `GET /todos`
 Este endpoint nos permitira obtener todos los _todos_ de la API.
 
 #### Endpoint
@@ -59,7 +59,7 @@ query_params: ?filter=completed, ?filter=active
 }
 ```
 
-### POST /todos
+### `POST /todos`
 Este endpoint nos permitirá crear un _todo_ en la API.
 
 #### Endpoint
@@ -89,7 +89,7 @@ body: {
 }
 ```
 
-### PATCH /todos
+### `PATCH /todos`
 Este endpoint nos permitirá modificar el estatus de un _todo_ de la API.
 
 #### Endpoint
@@ -122,26 +122,26 @@ body = {
 
 ## Funciones
 
-#### async loadTodos
+#### `async loadTodos`
 Esta función lo único que debe de hacer es lo siguiente:
 
 - Realizar una petición GET con la función `fetch`
 - Regresar los _todos_
 - Debe de ser lo suficientemente inteligente, para mandar los filtros aplicados*
 
-#### async createTodo(todo)
+#### `async createTodo(todo)`
 Esta función lo único que debe de hacer es lo siguiente:
 
 - Realizar una petición POST con la función `fetch`
 - Regresar el _todo_ creado.
 
-#### async updateTodo(todo, completed)
+#### `async updateTodo(todo, completed)`
 Esta función lo único que debe de hacer es lo siguiente:
 
 - Realizar una petición PATCH con la función `fetch`
 - Ejecutar la función `replaceTodo`
 
-#### generateTodo(todo)
+#### `generateTodo(todo)`
 Esta función lo único que debe de hacer es lo siguiente:
 
 - Crear un elemento `li`
@@ -168,7 +168,7 @@ Esta función lo único que debe de hacer es lo siguiente:
 - Apendear el label al li
 - Regresar el li creado
 
-#### appendTodo(todo)
+#### `appendTodo(todo)`
 Esta función lo único que debe de hacer es lo siguiente:
 
 - Ejecutar la función `generateTodo(todo)`
@@ -179,14 +179,14 @@ const li = generateTodo(todo)
 todosContainer.appendChild(li)
 ```
 
-#### renderTodos
+#### `renderTodos`
 Esta función lo único que debe de hacer es lo siguiente:
 
 - Ejecutar la función `loadTodos`
 - Recorrer el array de _todos_ que regresa la función `loadTodos`
 - Por cada elemento dentro del array ejecutar la función `appendTodo(todo)`
 
-#### replaceTodo(todo)
+#### `replaceTodo(todo)`
 Esta función lo único que debe de hacer es lo siguiente:
 
 - Obtener el _todo_ que queremos reemplazar, es decir, el _todo_ que fue clickeado
@@ -199,7 +199,7 @@ const newNode = generateTodo(todo)
 node.replaceWith(newNode)
 ```
 
-#### styleFilters
+#### `styleFilters`
 Esta función lo único que debe de hacer es lo siguiente:
 
 - Obtener los `searchParams` del URL
