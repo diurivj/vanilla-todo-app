@@ -227,3 +227,47 @@ createTodoInput.addEventListener('keydown', async e => {
   }
 })
 ```
+
+## Ejemplos de fetch
+
+### GET
+```js
+fetch(endpoint, {
+    method: 'GET', // optional
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+```
+
+### POST
+```js
+const body = {
+    todo: 'Comprar tortillas'
+}
+
+fetch(endpoint, {
+    method: 'POST', // required, just send one
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+})
+```
+
+### PATCH
+```js
+const body = {
+    id: 2,
+    completed: true
+}
+
+fetch(endpoint, {
+    method: 'PATCH', // required, just send one
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+})
+```
+
